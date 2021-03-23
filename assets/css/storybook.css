@@ -1,0 +1,91 @@
+*{}
+
+.story__commment {
+    background: white;
+    padding: 30px 250px;
+}
+.main-center{}
+.main-center .item-detail{
+    color: var(--white-color);
+    text-align: center;
+}
+.main-center .item-detail .detail-title{font-size: 2.4rem;padding: 10px 0;}
+.main-center .item-detail .time-update{}
+.main-center .detail-info{
+    padding: 30px 0;
+}
+
+.main-center .detail-info .detail__img {display: block;margin: 0 auto;width: 200px;}
+.main-center .detail-info .list__info{
+    list-style: none;
+    color: var(--white-color);
+    margin-top: 30px;
+}
+
+.main-center .detail-info .list__info li {
+    display: flex;
+    font-size: 1.6rem;
+    padding: 10px 0;
+}
+
+.main-center .detail-info .list__info li p {width: 150px;}
+.main-center .detail-info .book__favorite{
+    display: flex;
+    color: var(--white-color);
+    padding: 20px 0;
+}
+
+.main-center .detail-info .book__favorite p {
+    line-height: 38px;
+    margin-left: 32px;
+    font-size: 1.6rem;
+}
+.main-center .detail-info .book__favorite .btn__follow{
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 10px;
+    border: 1px solid var(--yellow-color);
+    background-color: var(--yellow-color);
+    border-radius: 5px;
+    color: var(--white-color);
+}
+
+.list__info .icon-list__info{width: 20px;color: var(--yellow-color);}
+.main-center .story__content{
+    padding: 30px 0;
+}
+.main-center .story__content .content__title,.chapter__title{
+    color: var(--yellow-color);
+    font-size: 2rem;
+    margin-left: 100px;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--yellow-color);
+    width: 1115px;
+}
+.main-center .story__content .story__summary{
+    margin-left: 100px;
+    padding: 10px 0;
+    color: var(--white-color);
+    font-size: 1.4rem;
+}
+.list__chapter{
+    margin-left: 100px;
+    list-style: none;
+    padding: 30px 0;
+    color: var(--white-color);
+    width: 550px;
+    margin: 0 auto;
+}
+.list__chapter li{
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid gray;
+    font-size: 1.4rem;
+}
+.list__chapter li p{
+    padding: 0 60px;
+}
+.list__chapter li p a{
+    color: var(--yellow-color);
+    text-decoration: none;
+}
