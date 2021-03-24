@@ -9,6 +9,29 @@ $(document).ready(function () {
     prevArrow:$('.btnSlider-prev'),
   });
 
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 240) {
+        $('.on__top').fadeIn();
+    } else {
+        $('.on__top').fadeOut();
+    }
+  });
+
+  $('.on__top').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 1100);
+    return false;
+  });
+
+  $(window).bind('scroll', function() {
+    var navHeight = $( window ).height()-450;
+      if ($(window).scrollTop() > navHeight) {
+        $('.header__nav').addClass('fixed');
+      }
+      else {
+        $('.header__nav').removeClass('fixed');
+      }
+  }); 
+
   $('.responsive').slick({
   dots: true,
   infinite: false,

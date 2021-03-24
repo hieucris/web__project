@@ -381,6 +381,16 @@ i.iconHeader {
     border-top: 1px solid #00856b;
 }
 
+.header__nav.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 70px;
+    transition: 0.4s;
+}
+
 ul.navbar__list {
     list-style: none;
     height: 100%;
@@ -872,3 +882,18 @@ i.fab.fa-instagram {
     line-height: 40px;
 }
 
+.on__top{
+    width: 40px;
+    height: 40px;
+    background: var(--yellow-color);
+    position: fixed;
+    bottom: 55px;
+    right: 55px;
+    border-radius: 50%;
+    border: 4px solid var(--white-color);
+    display: none;
+}
+.on__top .icon__ontop{
+    padding: 12px 13px;
+    color: var(--white-color);
+}
