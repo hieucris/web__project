@@ -44,12 +44,12 @@
 }
 
 .gallery-item.gallery-item-previous {
-  left: 30%;
+  left: 32%;
   transform: translateX(-50%);
 }
 
 .gallery-item.gallery-item-next {
-  left: 70%;
+  left: 68%;
   transform: translateX(-50%);
 }
 

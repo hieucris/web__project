@@ -23,7 +23,7 @@
 
 a.logo__link{
     display: block;
-    margin-top: -25px;
+    margin-top: -35px;
 }
 
 img.logo {
@@ -41,164 +41,18 @@ img.logo {
     margin-top: 15px;
 }
 
-.headerMenu {
-    width: 40px;
-    height: 40px;
-    background: #00483a;
-    cursor: pointer;
-    position: relative;
-}
-
-.headerMenu:hover .headerMenuDropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-}
-
-.menuBtnMobile {
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
-
-i.fas.fa-bars {
-    margin: auto;
-    color: var(--white-color);
-    font-size: 2.2rem;
-}
-
-.headerMenuDropdown {
-    position: absolute;
-    top: 56px;
-    left: -77px;
-    width: 195px;
-    height: 180px;
-    background-color: var(--white-color);
-    z-index: 10;
-    border-radius: 3px;
-    border: 1px solid #c5c0c0;
-    box-shadow: 0 0 10px #cdc8c8;
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0);
-    transition: 0.4s;
-}
-
-ul.menu__list {
-    list-style: none;
-    width: 100%;
-    height: 100%;
-}
-
-ul.menu__list:after {
-    content: "";
-    position: absolute;
-    width: 90px;
-    height: 19px;
-    background: transparent;
-    left: 48px;
-    top: -18px;
-}
-
-.headerMenuDropdown:after {
-    content: "";
-    position: absolute;
-    top: -30px;
-    left: 82px;
-    border: 15px solid transparent;
-    border-bottom: 15px solid var(--white-color);
-}
-
-li.menu__item {
-    padding: 13px;
-    position: relative;
-}
-
-li.menu__item:hover > a {
-    color: var(--yellow-color);
-}
-
-li.menu__item:hover i {
-    color: var(--yellow-color);
-}
-
-li.menu__item:hover .menuDropdown__list {
-    opacity: 1;
-    visibility: visible;
-    transform: rotateY(0deg);
-}
-
-li.menu__item a {
-    text-decoration: none;
-    font-size: 1.6rem;
-    color: var(--text-color);
-    transition: 0.4s;
-    width: 100%;
-}
-
-ul.menuDropdown__list {
-    list-style: none;
-    width: 210px;
-    background-color: var(--white-color);
-    border: 1px solid #c5c0c0;
-    box-shadow: 0 0 10px #cdc8c8;
-    border-radius: 3px;
-    position: absolute;
-    top: 0;
-    left: 194px;
-    opacity: 0;
-    visibility: hidden;
-    transform: rotateY(90deg);
-    transform-origin: 0% 0%;
-    transition: 0.4s;
-}
-
-li.menuDropdown__item {
-    padding: 10px 2px;
-    width: 162px;
-    margin: 0 23px;
-    border-bottom: 1px solid #cdc8c8;
-}
-
-li.menuDropdown__item:hover > a {
-    color: var(--yellow-color);
-    margin-left: 15px;
-}
-
-li.menuDropdown__item:last-child {
-    border: none;
-}
-
-li.menu__item:nth-child(1) i.fas.fa-angle-right {
-    margin-left: 112px;
-}
-
-li.menu__item:nth-child(2) i.fas.fa-angle-right {
-    margin-left: 88px;
-}
-
-li.menu__item:nth-child(3) i.fas.fa-angle-right {
-    margin-left: 95px;
-}
-li.menu__item:nth-child(4) i.fas.fa-angle-right {
-    margin-left: 80px;
-}
-
-i.fas.fa-angle-right {
-    color: var(--text-color);
-    transition: 0.4s;
-}
-
 .headerSearch {
     margin-left: 30px;
     height: 40px;
-    overflow: hidden;
+    position: relative;
 }
 
 form.formSearch {
     height: 100%;
     position: relative;
+    border-radius: 3px 3px 0 0;
     display: flex;
+    overflow: hidden;
 }
 
 input.search--control {
@@ -257,6 +111,53 @@ i.fas.fa-search {
     font-size: 1.6rem;
 }
 
+.search__filter {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    width: 100%;
+    height: 500px;
+    background-color: var(--white-color);
+    z-index: 9;
+    overflow-y: scroll;
+}
+.search__filter .list__storyBook--filter li {
+    border-bottom: 1px solid var(--yellow-color);
+    height: 100px;
+    list-style: none;
+}
+.search__filter .list__storyBook--filter li a {
+    display: flex;
+    height: 100%;
+    text-decoration: none;
+}
+.list__storyBook--filter li a img.storyBook--filter-img {
+    display: block;
+    width: 15%;
+    height: 70%;
+    margin: auto;
+    border-radius: 5px;
+}
+.list__storyBook--filter li a .storyBook--filter-right {
+    width: 80%;
+    padding: 20px 0 20px 20px;
+}
+.storyBook--filter-right .storyBook--filter-name {
+    font-size: 2.2rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+.storyBook--filter-right .storyBook--filter-content {
+    font-size: 1.4rem;
+    margin-top: 8px;
+}
+.storyBook--filter-right .storyBook--filter-chapter {
+    font-size: 1.2rem;
+    margin-top: 4px;
+    color: var(--yellow-color);
+    font-style: italic;
+}
 .headerContent__Right{
     flex: 2;
     height: 100%;
@@ -267,7 +168,7 @@ i.fas.fa-search {
     line-height: 155px;
     height: 100%;
     float: right;
-    padding-left: 80px;
+    padding-left: 130px;
     overflow: hidden;
     width: 100%;
 }

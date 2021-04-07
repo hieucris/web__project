@@ -4,60 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đọc Truyện Tranh online</title>
+    <link rel = "icon" href = "./assets/img/logo.png" type = "image/x-icon">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/slick.css">
     <link rel="stylesheet" href="./assets/css/animate.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/css/carousel.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/loading.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap&subset=vietnamese" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton&display=swap&subset=vietnamese" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">   
 </head>
 <body>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+    </div>
 
-    <div class="app">
+    <div class="app wow fadeIn">
         <div class="header__wrap">
             <div class="header">
                 <div class="grid wide">
                     <div class="headerContent grid--row">
                         <div class="headerContent__left wow flash">
-                            <a href="#" class="logo__link"><img src="./assets/img/logo-nettruyen.png" alt="" class="logo"></a>
+                            <a href="#" class="logo__link"><img src="./assets/img/logo-web.png" alt="" class="logo"></a>
                         </div>
                         <div class="headerContent__center">
                             <div class="headerContent__bottom">
-                                <div class="headerMenu">
-                                    <div class="menuBtnMobile">
-                                        <i class="fas fa-bars"></i>
-                                    </div>
-                                    <div class="headerMenuDropdown">
-                                        <ul class="menu__list">
-                                            <li class="menu__item"><a href="">Trang Chủ</a></li>
-                                            <li class="menu__item"><a href="">Thể Loại</a><i class="fas fa-angle-right"></i>
-                                                <ul class="menuDropdown__list">
-                                                    <li class="menuDropdown__item"><a href="">Truyện Tranh</a></li>
-                                                    <li class="menuDropdown__item"><a href="">Truyện Teen</a></li>
-                                                    <li class="menuDropdown__item"><a href="">Việt Nam</a></li>
-                                                    <li class="menuDropdown__item"><a href="">Phương Tây</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu__item"><a href="">Chủ Đề</a><i class="fas fa-angle-right"></i>
-                                                <ul class="menuDropdown__list">
-                                                    <li class="menuDropdown__item"><a href="">Truyện Mới</a></li>
-                                                    <li class="menuDropdown__item"><a href="">Xem Nhiều</a></li>
-                                                    <li class="menuDropdown__item"><a href="">Mới Cập Nhật</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu__item"><a href="">Xếp Hạng</a><i class="fas fa-angle-right"></i>
-                                                <ul class="menuDropdown__list">
-                                                    <li class="menuDropdown__item"><a href="">Top Tháng</a></li>
-                                                    <li class="menuDropdown__item"><a href="">Top Tuần</a></li>
-                                                    <li class="menuDropdown__item"><a href="">Top Ngày</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
                                 <div class="headerSearch">
                                     <form action="" class="formSearch">
                                         <input type="text" class="search--control" placeholder="I am looking for...">
@@ -66,6 +40,70 @@
                                             <i class="fas fa-search"></i>
                                         </button>
                                     </form>
+                                    <div class="search__filter">
+                                        <ul class="list__storyBook--filter">
+                                            <li>
+                                                <a href="">
+                                                    <img src="http://st.imageinstant.net/data/comics/22/moi-quan-he-khong-hoan-hao.jpg" alt="" class="storyBook--filter-img">
+                                                    <div class="storyBook--filter-right">
+                                                        <div class="storyBook--filter-name">Long Thần Bát Chủ</div>
+                                                        <p class="storyBook--filter-content">Thể Loại : Truyện Ngôn Tình</p>
+                                                        <p class="storyBook--filter-chapter">135 chapter</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="">
+                                                    <img src="http://st.imageinstant.net/data/comics/196/chi-gai-nuoi-nam-sinh-trung-hoc.jpg" alt="" class="storyBook--filter-img">
+                                                    <div class="storyBook--filter-right">
+                                                        <div class="storyBook--filter-name">Hiệp Giấy A4</div>
+                                                        <p class="storyBook--filter-content">Thể Loại : Truyện Cười</p>
+                                                        <p class="storyBook--filter-chapter">35 chapter</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="">
+                                                    <img src="http://st.imageinstant.net/data/comics/78/toi-da-chuyen-sinh-thanh-slime.jpg" alt="" class="storyBook--filter-img">
+                                                    <div class="storyBook--filter-right">
+                                                        <div class="storyBook--filter-name">Ngôi Nhà Hoa Hồng</div>
+                                                        <p class="storyBook--filter-content">Thể Loại : Truyện Văn Học</p>
+                                                        <p class="storyBook--filter-chapter">100 chapter</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="">
+                                                    <img src="http://st.imageinstant.net/data/comics/213/tong-tai-tai-thuong.jpg" alt="" class="storyBook--filter-img">
+                                                    <div class="storyBook--filter-right">
+                                                        <div class="storyBook--filter-name">Cuộc Đời Thị Nở</div>
+                                                        <p class="storyBook--filter-content">Thể Loại : Truyện Văn Học</p>
+                                                        <p class="storyBook--filter-chapter">165 chapter</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="">
+                                                    <img src="http://st.imageinstant.net/data/comics/42/nhat-duoc-hoa-khoi-ve-lam-vo.jpg" alt="" class="storyBook--filter-img">
+                                                    <div class="storyBook--filter-right">
+                                                        <div class="storyBook--filter-name">Trọn bộ truyện Doraemon</div>
+                                                        <p class="storyBook--filter-content">Thể Loại : Truyện Thiếu Nhi</p>
+                                                        <p class="storyBook--filter-chapter">235 chapter</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="">
+                                                    <img src="http://i.mangaqq.com/ebook/190x247/the-strongest-virus_1552265765.jpg" alt="" class="storyBook--filter-img">
+                                                    <div class="storyBook--filter-right">
+                                                        <div class="storyBook--filter-name">Ngịch Thiên Kiếm Thần</div>
+                                                        <p class="storyBook--filter-content">Thể Loại : Truyện Trinh Thám</p>
+                                                        <p class="storyBook--filter-chapter">195 chapter</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -835,10 +873,10 @@
                                     <p>Email: <a href="">hvktmm@actvn.edu.vn</a></p>
                                 </div>
                                 <ul class="social-icons">
-                                    <li><a href="" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="" title="Youtube"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="https://www.facebook.com/" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://www.instagram.com/" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://twitter.com/?lang=vi" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://www.youtube.com/" title="Youtube"><i class="fab fa-youtube"></i></a></li>
                                     <li><a href="" title="Rss"><i class="fa fa-rss"></i></a></li>
                                 </ul>
                             </div>
@@ -879,8 +917,8 @@
                                     <p>Ứng Dụng Truyện Tranh nay đã có trên ứng dụng Google Play & App Store</p>
                                 </div>
                                 <ul class="footer-list">
-                                    <li class="gg-store__link"><a href=""><img src="https://demo.hasthemes.com/ruiz-preview/ruiz/assets/images/brand/img-googleplay.jpg" alt=""></a></li>
-                                    <li class="app-store__link"><a href=""><img src="https://demo.hasthemes.com/ruiz-preview/ruiz/assets/images/brand/img-appstore.jpg" alt=""></a></li>
+                                    <li class="gg-store__link"><a href="https://play.google.com/store/apps;"><img src="./assets/img/android.png" alt=""></a></li>
+                                    <li class="app-store__link"><a href="https://www.apple.com/app-store/"><img src="./assets/img/ios.png" alt=""></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -903,7 +941,7 @@
         <a class="on__top" href="#top"><i class="icon__ontop fa fa-angle-up"></i></a>
     </div>
 
-    
+
     
     <script
     src="https://code.jquery.com/jquery-3.4.1.js"

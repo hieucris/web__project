@@ -159,4 +159,14 @@ $(document).ready(function () {
     $('.story-nation__wrap').isotope({filter : nation});
     return false;
   });
+  
+  $(window).on('load', function(){
+    setTimeout(removeLoader, 700); //wait for page load PLUS two seconds.
+  });
+  function removeLoader(){
+      $( "#loader-wrapper" ).fadeOut(300, function() {
+        // fadeOut complete. Remove the loading div
+        $( "#loader-wrapper" ).remove(); //makes page more lightweight 
+    });  
+  }
 });

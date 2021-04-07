@@ -11,55 +11,29 @@
     <link rel="stylesheet" href="/assets/css/slick.css">
     <link rel="stylesheet" href="/assets/css/animate.css">
     <link rel="stylesheet" href="/assets/css/carousel.css">
+    <link rel="stylesheet" href="/assets/css/loading.css">
     <link rel="stylesheet" href="/assets/css/grid.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap&subset=vietnamese" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton&display=swap&subset=vietnamese" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <title>Truyện Văn Học</title>
+    <link rel = "icon" href = "/assets/img/logo.png" type = "image/x-icon">
 </head>
 <body>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+    </div>
+    
     <div class="app">
         <div class="header__wrap">
             <div class="header">
                 <div class="grid wide">
                     <div class="headerContent grid--row">
                         <div class="headerContent__left wow flash">
-                            <a href="/index.html" class="logo__link"><img src="/assets/img/logo-nettruyen.png" alt="" class="logo"></a>
+                            <a href="/index.html" class="logo__link"><img src="/assets/img/logo-web.png" alt="" class="logo"></a>
                         </div>
                         <div class="headerContent__center">
                             <div class="headerContent__bottom">
-                                <div class="headerMenu">
-                                    <div class="menuBtnMobile">
-                                        <i class="fas fa-bars"></i>
-                                    </div>
-                                    <div class="headerMenuDropdown">
-                                        <ul class="menu__list">
-                                            <li class="menu__item"><a href="">Trang Chủ</a></li>
-                                            <li class="menu__item"><a href="">Thể Loại</a><i class="fas fa-angle-right"></i>
-                                                <ul class="menuDropdown__list">
-                                                    <li class="menuDropdown__item"><a href="">Truyện Tranh</a></li>
-                                                    <li class="menuDropdown__item"><a href="">Truyện Teen</a></li>
-                                                    <li class="menuDropdown__item"><a href="">Việt Nam</a></li>
-                                                    <li class="menuDropdown__item"><a href="">Phương Tây</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu__item"><a href="">Chủ Đề</a><i class="fas fa-angle-right"></i>
-                                                <ul class="menuDropdown__list">
-                                                    <li class="menuDropdown__item"><a href="">Truyện Mới</a></li>
-                                                    <li class="menuDropdown__item"><a href="">Xem Nhiều</a></li>
-                                                    <li class="menuDropdown__item"><a href="">Mới Cập Nhật</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="menu__item"><a href="">Xếp Hạng</a><i class="fas fa-angle-right"></i>
-                                                <ul class="menuDropdown__list">
-                                                    <li class="menuDropdown__item"><a href="">Top Tháng</a></li>
-                                                    <li class="menuDropdown__item"><a href="">Top Tuần</a></li>
-                                                    <li class="menuDropdown__item"><a href="">Top Ngày</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
                                 <div class="headerSearch">
                                     <form action="" class="formSearch">
                                         <input type="text" class="search--control" placeholder="I am looking for...">
@@ -451,8 +425,8 @@
                                     <p>Ứng Dụng Truyện Tranh nay đã có trên ứng dụng Google Play & App Store</p>
                                 </div>
                                 <ul class="footer-list">
-                                    <li class="gg-store__link"><a href=""><img src="https://demo.hasthemes.com/ruiz-preview/ruiz/assets/images/brand/img-googleplay.jpg" alt=""></a></li>
-                                    <li class="app-store__link"><a href=""><img src="https://demo.hasthemes.com/ruiz-preview/ruiz/assets/images/brand/img-appstore.jpg" alt=""></a></li>
+                                    <li class="gg-store__link"><a href="https://play.google.com/store/apps;"><img src="/assets/img/android.png" alt=""></a></li>
+                                    <li class="app-store__link"><a href="https://www.apple.com/app-store/"><img src="/assets/img/ios.png" alt=""></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -471,6 +445,8 @@
                 </div>
             </div>
         </footer>
+
+        <a class="on__top" href="#top"><i class="icon__ontop fa fa-angle-up"></i></a>
     </div>
     
     <script
