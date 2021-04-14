@@ -161,12 +161,18 @@ $(document).ready(function () {
   });
   
   $(window).on('load', function(){
-    setTimeout(removeLoader, 700); //wait for page load PLUS two seconds.
+    setTimeout(removeLoader, 700);
   });
   function removeLoader(){
       $( "#loader-wrapper" ).fadeOut(300, function() {
-        // fadeOut complete. Remove the loading div
-        $( "#loader-wrapper" ).remove(); //makes page more lightweight 
+        $( "#loader-wrapper" ).remove();
     });  
   }
+
+  $(".search--control").focusin(function() {
+    $(".search__filter").addClass("search__show");
+  }).focusout(function () {
+    $(".search__filter").removeClass("search__show");
+  });
+
 });

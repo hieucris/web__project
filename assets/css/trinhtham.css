@@ -25,6 +25,9 @@
     color: var(--yellow-color);
 }
 .main-content__wrap{padding: 20px 0;}
+.main-content__wrap{
+    
+}
 .main-content__wrap .storyBook__nation{
     list-style: none;
     display: flex;

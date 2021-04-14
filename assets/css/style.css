@@ -5,7 +5,7 @@
 /* start style header */
 
 .header {
-    height: 100px;
+    height: 70px;
     background-color: #13394c;
 }
 
@@ -23,7 +23,7 @@
 
 a.logo__link{
     display: block;
-    margin-top: -35px;
+    margin-top: -50px;
 }
 
 img.logo {
@@ -31,7 +31,6 @@ img.logo {
 }
 
 .headerContent__center {
-    padding: 17px 0;
     flex: 2;
     height: 100%;
 }
@@ -120,6 +119,8 @@ i.fas.fa-search {
     background-color: var(--white-color);
     z-index: 9;
     overflow-y: scroll;
+    opacity: 0;
+    visibility: hidden;
 }
 .search__filter .list__storyBook--filter li {
     border-bottom: 1px solid var(--yellow-color);
@@ -177,7 +178,7 @@ i.fas.fa-search {
     color: var(--white-color);
     font-size: 2.3rem;
     height: 100%;
-    width: 70px;
+    width: 60px;
 }
 
 .headerIcon.headerLink:hover .headerInfo__list {
@@ -244,7 +245,7 @@ li.headerInfo__item > a {
 
 a.icon {
     display: block;
-    padding: 20px 0px;
+    padding: 5px 0px;
     margin-top: -46px;
     margin-left: 4px;
     color: #fff;
@@ -252,6 +253,18 @@ a.icon {
     text-decoration: none;
     transition: all 0.35s ease;
     transform: rotate(20deg);
+}
+
+a.icon.iconWishlist--active {
+    background-color: var(--yellow-color);
+}
+
+a.icon.iconRegister--active {
+    background-color:var(--yellow-color);
+}
+
+a.icon.btnLogin--active {
+    background-color:var(--yellow-color);
 }
 
 .headerIcon a.icon:hover {
@@ -264,6 +277,10 @@ a.icon.iconWishlist {
 
 a.icon.iconUser {
     background-color: #0b4b4e;
+}
+
+a.icon.iconUser.btnLogin--active {
+    background-color: var(--yellow-color);
 }
 
 a.icon.iconRegister {
@@ -302,6 +319,10 @@ ul.navbar__list {
 li.navbar__item {
     line-height: 85px;
     position: relative;
+}
+
+li.navbar__item.navbar__item--active > a {
+    background-color: var(--yellow-color);
 }
 
 li.navbar__item>a {
@@ -797,4 +818,10 @@ i.fab.fa-instagram {
 .on__top .icon__ontop{
     padding: 12px 13px;
     color: var(--white-color);
+}
+
+
+.search__show{
+    opacity: 1;
+    visibility: visible;
 }
