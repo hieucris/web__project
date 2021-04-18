@@ -2,6 +2,12 @@
     height: 60px;
     background-color: #13394c;
 }
+
+.readBook__wrapper{
+    display: flex;
+}
+
+
 .breadcrumb-area .breadcrumb-list{
     list-style: none;
     display: flex;
@@ -15,6 +21,11 @@
 .breadcrumb-area .breadcrumb-list .breadcrumb-item a {
     text-decoration: none;
     font-size: 1.8rem;
+    transition: 0.4s;
+}
+
+.breadcrumb-area .breadcrumb-list .breadcrumb-item a:hover {
+    color: var(--yellow-color);
 }
 
 .breadcrumb-area .breadcrumb-list .breadcrumb-item.active {
@@ -24,10 +35,55 @@
 .breadcrumb-area .breadcrumb-list .breadcrumb-item.active>a {
     color: var(--yellow-color);
 }
-.main-content__wrap{padding: 20px 0;}
-.main-content__wrap{
-    
+
+.click--direction{
+    display: flex;
+    margin-left: 260px;
+    width: 500px;
 }
+
+.click--direction .prev-chap{
+    font-size: 2rem;
+    color: var(--yellow-color);
+    line-height: 62px;
+    padding-right: 20px;
+}
+
+.listChapter {
+    width: 25%;
+    height: 50%;
+    font-size: 1.4rem;
+    margin: auto 0;
+}
+
+.listChap {
+    list-style: none;
+    width: 30px;
+}
+
+ul.listChap > li > a {
+    color: var(--white-color);
+}
+
+listChap {
+    list-style: none;
+}
+
+.click--direction .next-chap{
+    font-size: 2rem;
+    color: var(--yellow-color);
+    line-height: 62px;
+    padding-left: 20px;
+}
+.main-content__wrap{
+    padding: 40px;
+}
+
+.main-content{
+    text-align: center;
+    padding: 50px;
+}
+
 .main-content__wrap .storyBook__nation{
     list-style: none;
     display: flex;
@@ -49,7 +105,6 @@
     color: var(--yellow-color);
     text-decoration: underline;
 }
-*{}
 
 .slider__story {
     margin-bottom: 20px;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/trinhtham.css">
+    <link rel="stylesheet" href="/assets/css/book.css">
     <link rel="stylesheet" href="/assets/css/login.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/base.css">
@@ -110,26 +110,34 @@
             <div class="grid wide">
               <div class="row">
                 <div class="c-12">
-                  <ul class="breadcrumb-list">
-                    <li class="breadcrumb-item"><a href="/index.htm">Home /</a></li>
-                    <li class="breadcrumb-item"><a href="">Thám Tử Ngôn Tình /</a></li>
-                    <li class="breadcrumb-item active"><a href="">Chapter 1</a></li>
-                  </ul>
+                    <div class="readBook__wrapper">
+                        <ul class="breadcrumb-list">
+                            <li class="breadcrumb-item"><a href="/index.html">Home /</a></li>
+                            <li class="breadcrumb-item"><a href="./storyBook.html">Thám Tử Ngôn Tình /</a></li>
+                            <li class="breadcrumb-item active"><a href="">Chapter 1</a></li>
+                        </ul>
+                        <div class="click--direction">
+                            <i class="fas fa-chevron-left prev-chap"></i>
+                            <select name="listChap" class="listChapter">
+                                <option value="chap1">Chap 1</option>
+                                <option value="chap2">Chap 2</option>
+                                <option value="chap3">Chap 3</option>
+                                <option value="chap4">Chap 4</option>
+                                <option value="chap5">Chap 5</option>
+                              </select>
+                            <i class="fas fa-chevron-right next-chap"></i>
+                        </div>
+                    </div>
                 </div>
               </div>
             </div>
         </div>
 
-        <div class="main-content__wrap">
+        <div class="main-content">
             <div class="grid wide">
                 <div class="row">
                     <div class="c-12">
-                        <div class="readBook__content">Nội Dung : Nữ chính trong một lần tai nạn xe bị sinh vật bí ẩn gá vào người, sau khi tỉnh lại đến một thế giới yêu linh. Trong lúc cô ấy sợ hãi, tuyệt vọng thì xuất hiện một thiếu niên cứu cô ta về hiện thế. Thì ra thế giới này có yêu linh, sinh vật trong cơ thể cô ta là yêu linh tên "Nhân Tiêu", không cách nào đẩy yêu linh ra ngoài được, cùng đồng hành trên con đường trừ yêu...</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="c-12">
-                         <div class="read__storyBook"><img src="http://tintruyen.net/8339/fix-127/0.jpg" alt=""></div>
+                       <img src="http://cdn.vcomic.net/174/113/4508497.jpg" alt="" class="readBook__img">
                     </div>
                 </div>
             </div>
@@ -227,7 +235,7 @@
     <script src="/js/slick.min.js"></script>
     <script src="/js/wow.min.js"></script>
     <script src="/js/isotope.pkgd.min.js"></script>
-    <script src="/js/sparta.js"></script>
+    <script src="/js/main.js"></script>
     <script src="/js/carousel.js"></script>  
 
 </body>
