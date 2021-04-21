@@ -836,8 +836,9 @@ i.fab.fa-instagram {
     color: var(--white-color);
 }
 
-
-.search__show{
-    opacity: 1;
-    visibility: visible;
+.readBook__img{
+    width: 70%;
+    height: auto;
+    display: block;
+    margin: auto;
 }

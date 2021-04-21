@@ -25,6 +25,17 @@ $(document).ready(function () {
       }
   }); 
 
+  // scroll on top fix menu chap
+  $(window).bind('scroll', function() {
+    var navChap = $( window ).height()-500;
+      if ($(window).scrollTop() > navChap) {
+        $('.breadcrumb-area').addClass('fixed');
+      }
+      else {
+        $('.breadcrumb-area').removeClass('fixed');
+      }
+  }); 
+
   // slide story__wrap
   $('.story__wrap').slick({
     slidesToShow: 6,
@@ -48,7 +59,7 @@ $(document).ready(function () {
   // slide category__wrap
   $('.category__wrap').slick({
     slidesToShow: 6,
-    slidesToScroll: 3,
+    slidesToScroll: 2,
     autoplay: true,
     autoplaySpeed: 3000,
     nextArrow:$('.next-item__category'),
