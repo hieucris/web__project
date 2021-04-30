@@ -49,79 +49,15 @@
                             <div class="headerContent__bottom">
                                 <div class="headerSearch">
                                     <form action="backend/search.php" class="formSearch" method="POST">
-                                        <input type="text" class="search--control" placeholder="I am looking for..." name="comic">
+                                        <input type="text" class="search--control" placeholder="I am looking for..." id="comic">
                                         <button type="submit" class="btnSearch" name="submit">
                                             <span class="btnSearch-text">Search</span>
                                             <i class="fas fa-search"></i>
                                         </button>
-                                        <div name="comic-list"></div>
-                                        <!-- <div class="search__filter">
-                                            <ul class="list__storyBook--filter">
-                                                <li>
-                                                    <a href="">
-                                                        <img src="http://st.imageinstant.net/data/comics/22/moi-quan-he-khong-hoan-hao.jpg" alt="" class="storyBook--filter-img">
-                                                        <div class="storyBook--filter-right">
-                                                            <div class="storyBook--filter-name">Long Thần Bát Chủ</div>
-                                                            <p class="storyBook--filter-content">Thể Loại : Truyện Ngôn Tình</p>
-                                                            <p class="storyBook--filter-chapter">135 chapter</p>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="">
-                                                        <img src="http://st.imageinstant.net/data/comics/196/chi-gai-nuoi-nam-sinh-trung-hoc.jpg" alt="" class="storyBook--filter-img">
-                                                        <div class="storyBook--filter-right">
-                                                            <div class="storyBook--filter-name">Hiệp Giấy A4</div>
-                                                            <p class="storyBook--filter-content">Thể Loại : Truyện Cười</p>
-                                                            <p class="storyBook--filter-chapter">35 chapter</p>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="">
-                                                        <img src="http://st.imageinstant.net/data/comics/78/toi-da-chuyen-sinh-thanh-slime.jpg" alt="" class="storyBook--filter-img">
-                                                        <div class="storyBook--filter-right">
-                                                            <div class="storyBook--filter-name">Ngôi Nhà Hoa Hồng</div>
-                                                            <p class="storyBook--filter-content">Thể Loại : Truyện Văn Học</p>
-                                                            <p class="storyBook--filter-chapter">100 chapter</p>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="">
-                                                        <img src="http://st.imageinstant.net/data/comics/213/tong-tai-tai-thuong.jpg" alt="" class="storyBook--filter-img">
-                                                        <div class="storyBook--filter-right">
-                                                            <div class="storyBook--filter-name">Cuộc Đời Thị Nở</div>
-                                                            <p class="storyBook--filter-content">Thể Loại : Truyện Văn Học</p>
-                                                            <p class="storyBook--filter-chapter">165 chapter</p>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="">
-                                                        <img src="http://st.imageinstant.net/data/comics/42/nhat-duoc-hoa-khoi-ve-lam-vo.jpg" alt="" class="storyBook--filter-img">
-                                                        <div class="storyBook--filter-right">
-                                                            <div class="storyBook--filter-name">Trọn bộ truyện Doraemon</div>
-                                                            <p class="storyBook--filter-content">Thể Loại : Truyện Thiếu Nhi</p>
-                                                            <p class="storyBook--filter-chapter">235 chapter</p>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="">
-                                                        <img src="http://st.imageinstant.net/data/comics/164/ma-thu-kiem-thanh-di-gioi-tung-hoanh.jpg" alt="" class="storyBook--filter-img">
-                                                        <div class="storyBook--filter-right">
-                                                            <div class="storyBook--filter-name">Ngịch Thiên Kiếm Thần</div>
-                                                            <p class="storyBook--filter-content">Thể Loại : Truyện Trinh Thám</p>
-                                                            <p class="storyBook--filter-chapter">195 chapter</p>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div> -->
                                     </form>
                                 </div>
                             </div>
+                            <div id="comic-list" ></div>
                         </div>
                         <div class="headerContent__Right">
                             <div class="headerInfo">
