@@ -112,19 +112,21 @@ $(document).ready(function () {
         $.ajax({
           url: "/backend/search.php",
           method: "POST",
+          cache:false,
           data: {
             comic:comic,
           },
-          success: function (response) {
-            $("#comic-list").html(response);
+          success: function (data) {
+            $("#comic-list").html(data);
             $("#comic-list").fadeIn();
           },
         });
       } else {
         $("#comic-list").html("");
+        $('#comic-list').fadeOut();
       }
     });
-    $(document).on("click", "a", function () {
+    $(document).on("click", "li", function () {
       $("#comic").val($(this).text());
       $("#comic-list").html("");
     });

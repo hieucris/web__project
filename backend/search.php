@@ -6,10 +6,11 @@
     if(isset($_POST["comic"])){
   		$output = "";
   		$title= $_POST['comic'];
-          $exec = $conn->prepare("SELECT * FROM comics WHERE title = ?");
-          $exec->bind_param("s",$title);
-          $exec->execute();
-          $result = $exec->get_result();  
+		$exec = $conn->prepare("SELECT * FROM comics WHERE title = ?");
+		$exec->bind_param("s",$title);
+		$exec->execute();
+		$result = $exec->get_result();  
+		$output = '<ul class="list__storyBook--filter">';
   		if ($result->num_rows > 0) {
   			while ($row = $result->fetch_array()) {
   				$output .= '<li>';
@@ -24,7 +25,7 @@
 				$output .= "</li>";
   			}
   		}else{
-  			  $output .= '<a> Comic not Found</a>';
+  			  $output .= '<li> Comic not Found</li>';
   		}
   		
 	  	$output .= '</ul>';
