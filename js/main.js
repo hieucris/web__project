@@ -107,26 +107,24 @@ $(document).ready(function () {
   // Search filter 
   $(document).ready(function () {
     $("#comic").keyup(function () {
-      let comic = $(this).val();
-      if (comic != "") {
+      let Comic = $(this).val();
+      if (Comic != "") {
         $.ajax({
           url: "/backend/search.php",
           method: "POST",
           cache:false,
           data: {
-            comic:comic,
+            comic:Comic,
           },
           success: function (data) {
             $("#comic-list").html(data);
-            $("#comic-list").fadeIn();
           },
         });
       } else {
         $("#comic-list").html("");
-        $('#comic-list').fadeOut();
       }
     });
-    $(document).on("click", "li", function () {
+    $(document).on("click", "a", function () {
       $("#comic").val($(this).text());
       $("#comic-list").html("");
     });
