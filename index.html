@@ -15,6 +15,18 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap&subset=vietnamese" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton&display=swap&subset=vietnamese" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">   
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
@@ -36,13 +48,14 @@
                         <div class="headerContent__center">
                             <div class="headerContent__bottom">
                                 <div class="headerSearch">
-                                    <form action="" class="formSearch">
-                                        <input type="text" class="search--control" placeholder="I am looking for...">
-                                        <button type="submit" class="btnSearch">
+                                    <form action="backend/search.php" class="formSearch" method="POST">
+                                        <input type="text" class="search--control" placeholder="I am looking for..." name="comic">
+                                        <button type="submit" class="btnSearch" name="submit">
                                             <span class="btnSearch-text">Search</span>
                                             <i class="fas fa-search"></i>
                                         </button>
-                                        <div class="search__filter">
+                                        <div name="comic-list"></div>
+                                        <!-- <div class="search__filter">
                                             <ul class="list__storyBook--filter">
                                                 <li>
                                                     <a href="">
@@ -105,7 +118,7 @@
                                                     </a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                     </form>
                                 </div>
                             </div>
@@ -970,7 +983,7 @@
     <script src="js/slick.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/main.js"></script>
+   <script src="js/main.js"></script>
     <script src="js/carousel.js"></script>      
 </body>
 </html>

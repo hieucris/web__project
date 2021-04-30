@@ -106,26 +106,27 @@ $(document).ready(function () {
 
   // Search filter 
   $(document).ready(function () {
-    $(".search--control").keyup(function () {
-      let searchText = $(this).val();
-      if (searchText != "") {
+    $("#comic").keyup(function () {
+      let comic = $(this).val();
+      if (comic != "") {
         $.ajax({
-          url: "action.php",
-          method: "post",
+          url: "/backend/search.php",
+          method: "POST",
           data: {
-            query: searchText,
+            comic:comic,
           },
           success: function (response) {
-            $(".list__storyBook--filter").html(response);
+            $("#comic-list").html(response);
+            $("#comic-list").fadeIn();
           },
         });
       } else {
-        $(".list__storyBook--filter").html("");
+        $("#comic-list").html("");
       }
     });
     $(document).on("click", "a", function () {
-      $(".search--control").val($(this).text());
-      $(".list__storyBook--filter").html("");
+      $("#comic").val($(this).text());
+      $("#comic-list").html("");
     });
   });
 
