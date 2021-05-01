@@ -1,16 +1,21 @@
 <?php
+	ini_set('display_errors', 1); 
+	error_reporting(E_ALL);
     $conn = new mysqli("localhost", "tinnt", "123", "DB");
     if($conn->connect_error){
         die("Connection Failed: ".$conn->connect_error);    
     }
     if(isset($_POST["comic"])){
   		$output = "";
-  		$title= $_POST['comic'];
-		$exec = $conn->prepare("SELECT * FROM comics WHERE title = ?");
-		$exec->bind_param("s",$title);
-		$exec->execute();
-		$result = $exec->get_result();  
-		$output = '<ul class="list__storyBook--filter">';
+  		$title= $_POST['comic'];                            
+		// $exec = $conn->prepare("SELECT * FROM comics WHERE title LIKE '%?%'");
+		// $exec->bind_param("s",$title);
+		// $exec->execute();
+		// $result = $exec->get_result();  
+		$query = "SELECT * FROM comics WHERE title LIKE '%$title%'";
+		$result = $conn->query($query);                                    
+
+		$output .= '<ul class="list__storyBook--filter">';
   		if ($result->num_rows > 0) {
   			while ($row = $result->fetch_array()) {
   				$output .= '<li>';

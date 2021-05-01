@@ -107,17 +107,19 @@ $(document).ready(function () {
   // Search filter 
   $(document).ready(function () {
     $("#comic").keyup(function () {
-      let Comic = $(this).val();
-      if (Comic != "") {
+      let comic = $(this).val();
+      // debugger;
+      if (comic != "") {
         $.ajax({
-          url: "/backend/search.php",
+          url: "backend/search.php",
           method: "POST",
           cache:false,
           data: {
-            comic:Comic,
+            comic:comic,
           },
           success: function (data) {
             $("#comic-list").html(data);
+            console.log(data);
           },
         });
       } else {
