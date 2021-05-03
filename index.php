@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/slick.css">
     <link rel="stylesheet" href="./assets/css/animate.css">
-    <link rel="stylesheet" href="./assets/css/carousel.css">
+    <link rel="stylesheet" href="./assets/css/carousel1.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="/assets/css/loading.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap&subset=vietnamese" rel="stylesheet">
@@ -327,7 +327,7 @@
     <script src="js/wow.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/carousel.js"></script>      
+    <script src="js/carousel1.js"></script>      
 </body>
 </html>
 <?php 

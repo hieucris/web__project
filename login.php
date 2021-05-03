@@ -34,8 +34,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $_SESSION['username'] = $username;
            header('Location: index.php');
         }else{
-            echo "Sai username hoặc mật khẩu";
-            header('Location: login.php');
+        	echo '<script language="javascript">';
+			echo 'alert("Sai username hoặc mật khẩu")';
+			echo '</script>';
        
 		}     
         
@@ -282,3 +283,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
 </body>
 </html>
+<script type="text/javascript">
+    function show(){
+        alert("Tính năng đang phát triển. Nếu muốn có thể liên hệ quản trị viên");
+    }
+
+</script>	
