@@ -28,37 +28,18 @@ class CategoriesController extends AppController
         }
     }
     public function edit($id = null){
-        $this->set('title_for_layout', 'Edit Category');
-        $result = $this->Category->generateTreeList(null, null, null, "---");
-        $this->set('result', $result);
-        $detail = $this->Category->find('first', array(
-            'fields' => array('id', 'name','parent_id','description'),
-            'conditions'=>array('id = '.$id),
-            'recursive'   =>-1
-        ));
-        $this->set('detail', $detail);
-        if($this->request->is('post')){
-            $arrParams = $this->data['Category'];
-            if($arrParams['name']==null){
-                $error['name'] = 'Not null';
-            }
-            if(empty($error)){
-                $now = date('Y:m:d h:i:s');
-                $data = array(
-                    'Category'=>array(
-                        'name'=> $arrParams['name'],
-                        'date_updated'=>$now,
-                        'parent_id'=>$arrParams['parent_id'],
-                        'description'=>$arrParams['description']
-                    )
-                );
-                $this->Category->id = $id;
-                $this->Category->save($data);
+        if($this->request->is('post') || $this->request->is('put')){
+            //print_r($this->request->data);exit();
+            $this->Category->id = $id;
+            $this->Category->set(array('date_updated' => date('Y:m:d H:i:s')));
+            if($this->Category->save($this->request->data)){
                 $this->Session->setFlash('Success','default',array('class'=>"alert alert-success"));
-                $this->redirect('list');
+                $this->redirect(array('action'=>'list'));
             }
             
-            $this->set("error", $error);//gửi thông báo lỗi qua view
+        }else{
+            $this->Category->id = $id;
+            $this->request->data = $this->Category->read();//đọc thông tin user với $id, gán vào request->data hiển thị view
         }
     }
     public function add(){

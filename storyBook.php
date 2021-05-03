@@ -9,15 +9,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/trinhtham.css">
-    <link rel="stylesheet" href="assets/css/login.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/storybook.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/carousel.css">
-    <link rel="stylesheet" href="assets/css/grid.css">
+    <link rel = "icon" href = "./assets/img/logo.png" type = "image/x-icon">
+    <link rel="stylesheet" href="./assets/css/trinhtham.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/slick.css">
+    <link rel="stylesheet" href="./assets/css/storybook.css">
+    <link rel="stylesheet" href="./assets/css/animate.css">
+    <link rel="stylesheet" href="./assets/css/carousel.css">
+    <link rel="stylesheet" href="./assets/css/book.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap&subset=vietnamese" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton&display=swap&subset=vietnamese" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
@@ -32,12 +34,12 @@
                 <div class="grid wide">
                     <div class="headerContent grid--row">
                         <div class="headerContent__left wow flash">
-                            <a href="/index.html" class="logo__link"><img src="/assets/img/logo-nettruyen.png" alt="" class="logo"></a>
+                            <a href="index.php" class="logo__link"><img src="assets/img/logo-web.png" alt="" class="logo"></a>
                         </div>
                         <div class="headerContent__center">
                             <div class="headerContent__bottom">
                                 <div class="headerSearch">
-                                    <form action="search.php" class="formSearch" method="POST">
+                                    <form action="backend/search.php" class="formSearch" method="POST">
                                         <input type="text" class="search--control" placeholder="I am looking for..." id="comic" name=comic>
                                         <button type="submit" class="btnSearch" name="submit">
                                             <span class="btnSearch-text">Search</span>
@@ -50,10 +52,18 @@
                         </div>
                         <div class="headerContent__Right">
                             <div class="headerInfo">
-                                <div class="headerIcon headerWishlist"><a href="./favorite.html" class="icon iconWishlist" title="My Wishlist"><i class="iconHeader fas fa-heart"></i></a></div>
-                                <div class="headerIcon headerLogin"><a href="./login.html" class="icon iconUser" title="Login"><i class="iconHeader fas fa-sign-out-alt"></i></a></div>
-                                <div class="headerIcon headerRegister"><a href="./register.html" class="icon iconRegister" title="Register"><i class="iconHeader fas fa-user-plus"></i></a></div>
-                            </div>  
+                                <?php if(!isset($_SESSION['username'])){ ?>
+                                <div class="headerIcon headerWishlist"><a href="" class="icon iconWishlist" title="My Wishlist"><i class="iconHeader fas fa-heart"></i></a></div>
+
+                                
+                                <div class="headerIcon headerLogin"><a href="./login.php" class="icon iconUser" title="Login"><i class="iconHeader fas fa-sign-out-alt"></i></a></div>  
+                                <div class="headerIcon headerRegister"><a href="./register.php" class="icon iconRegister" title="Register"><i class="iconHeader fas fa-user-plus"></i></a></div>
+                            <?php } else { ?>
+                                    <div class="form__welcome"><span class="welcome"><?php echo "Welcome ".$_SESSION['username']."!";  ?></span></div>
+                                    <div class="headerIcon headerLogin"><a href="./logout.php" class="icon iconUser" title="Logout"><i class="iconHeader fas fa-sign-out-alt"></i></a></div>
+                                    <div class="headerIcon headerRegister" id=mes  onclick="show()"><a href="" class="icon iconRegister" title="Edit Password"><i class="iconHeader fas fa-user-plus"></i></a></div>
+                                </div>  
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -136,8 +146,8 @@
                                     <p> <?php echo $row['view']; ?></p>
                                 </li>
                             </ul>
-                            <div class="book__favorite">
-                                <a href="./favorite.html" class="btn__follow"><i class="icon__love fas fa-heart"></i> Theo Dõi</a>
+                            <div class="book__favorite" onclick="show()">
+                                <a href="" class="btn__follow"><i class="icon__love fas fa-heart"></i> Theo Dõi</a>
                                 <p>Có 150.000 người đã theo dõi</p>
                             </div>
                         </div>
@@ -289,20 +299,28 @@
                 </div>
             </div>
         </footer>
+        <a class="on__top" href="#top"><i class="icon__ontop fa fa-angle-up"></i></a>
     </div>
     
     <script
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
-    <script src="/js/slick.min.js"></script>
-    <script src="/js/wow.min.js"></script>
-    <script src="/js/isotope.pkgd.min.js"></script>
-    <script src="/js/sparta.js"></script>
-    <script src="/js/carousel.js"></script>  
+    <script src="js/slick.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/sparta.js"></script>
+    <script src="js/carousel.js"></script>  
+    <script src="js/main.js"></script>
 
 </body>
 </html>
+<script type="text/javascript">
+    function show(){
+        alert("Tính năng đang trong quá trình phát triển");
+    }
+
+</script>
 
 
  

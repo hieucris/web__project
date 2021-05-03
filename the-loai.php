@@ -1,6 +1,7 @@
 <?php
     include('connect.php'); 
     $categoris_id = $_GET['id'];
+    require_once "login_config.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,15 +11,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/book.css">
-    <link rel="stylesheet" href="assets/css/login.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/base.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/carousel.css">
-    <link rel="stylesheet" href=".assets/css/loading.css">
-    <link rel="stylesheet" href="assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/book.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/slick.css">
+    <link rel="stylesheet" href="./assets/css/animate.css">
+    <link rel="stylesheet" href="./assets/css/carousel.css">
+    <link rel="stylesheet" href="/assets/css/loading.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap&subset=vietnamese" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton&display=swap&subset=vietnamese" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
@@ -41,7 +42,7 @@
                         <div class="headerContent__center">
                             <div class="headerContent__bottom">
                                 <div class="headerSearch">
-                                    <form action="search.php" class="formSearch" method="POST">
+                                    <form action="backend/search.php" class="formSearch" method="POST">
                                         <input type="text" class="search--control" placeholder="I am looking for..." id="comic" name=comic>
                                         <button type="submit" class="btnSearch" name="submit">
                                             <span class="btnSearch-text">Search</span>
@@ -54,10 +55,18 @@
                         </div>
                         <div class="headerContent__Right">
                             <div class="headerInfo">
-                                <div class="headerIcon headerWishlist"><a href="" class="icon iconWishlist--active" title="My Wishlist"><i class="iconHeader fas fa-heart"></i></a></div>
-                                <div class="headerIcon headerLogin"><a href="login.html" class="icon iconUser" title="Login"><i class="iconHeader fas fa-sign-out-alt"></i></a></div>
-                                <div class="headerIcon headerRegister"><a href="register.html" class="icon iconRegister" title="Register"><i class="iconHeader fas fa-user-plus"></i></a></div>
-                            </div>  
+                                <?php if(!isset($_SESSION['username'])){ ?>
+                                <div class="headerIcon headerWishlist"><a href="" class="icon iconWishlist" title="My Wishlist"><i class="iconHeader fas fa-heart"></i></a></div>
+
+                                
+                                <div class="headerIcon headerLogin"><a href="./login.php" class="icon iconUser" title="Login"><i class="iconHeader fas fa-sign-out-alt"></i></a></div>  
+                                <div class="headerIcon headerRegister"><a href="./register.php" class="icon iconRegister" title="Register"><i class="iconHeader fas fa-user-plus"></i></a></div>
+                            <?php } else { ?>
+                                    <div class="form__welcome"><span class="welcome"><?php echo "Welcome ".$_SESSION['username']."!";  ?></span></div>
+                                    <div class="headerIcon headerLogin"><a href="./logout.php" class="icon iconUser" title="Logout"><i class="iconHeader fas fa-sign-out-alt"></i></a></div>
+                                    <div class="headerIcon headerRegister" id=mes  onclick="show()"><a href="" class="icon iconRegister" title="Edit Password"><i class="iconHeader fas fa-user-plus"></i></a></div>
+                                </div>  
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -89,14 +98,7 @@
               <div class="row">
                 <div class="c-12">
                   <ul class="breadcrumb-list">
-                    <?php
-                            $sql = "SELECT * FROM categories where id =$categoris_id";
-                            $result = $link ->query($sql);
-                            while($row = $result->fetch_array()) {
-                        ?>
-                    <li class="breadcrumb-item"><a href="index.php">Home /</a></li>
-                    <li class="breadcrumb-item active"><a href=""><?php echo $row['name'] ?>/</a></li>
-                <?php } ?>
+                   
                   </ul>
                 </div>
               </div>

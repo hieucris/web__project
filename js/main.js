@@ -25,6 +25,16 @@ $(document).ready(function () {
       }
   }); 
 
+  $(window).bind('scroll', function() {
+    var navChap = $( window ).height()-500;
+      if ($(window).scrollTop() > navChap) {
+        $('.breadcrumb-area').addClass('fixed');
+      }
+      else {
+        $('.breadcrumb-area').removeClass('fixed');
+      }
+  });
+  
   // slide story__wrap
   $('.story__wrap').slick({
     slidesToShow: 6,

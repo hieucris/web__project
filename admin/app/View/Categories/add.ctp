@@ -33,10 +33,6 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Select menu</label>
-                                            <?php echo $this->Form->select('parent_id',$result,array('class'=>'form-control','empty'=>array('0'=>"")));?>
-                                        </div>
-                                        <div class="form-group">
                                             <label>Description</label>
                                             <?php 
                                             echo $this->Form->textarea('description', array('class'=>'form-control ckeditor','id'=>'description'));

@@ -1,6 +1,8 @@
 <?php 
     include("connect.php");
     require_once "login_config.php";
+    $user= $_SESSION['username'] ;
+    setcookie("name", $user, time() + 600, "/","");
     
 ?>
 <!DOCTYPE html>
@@ -21,17 +23,11 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap&subset=vietnamese" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton&display=swap&subset=vietnamese" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">   
-        <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -67,10 +63,18 @@
                         </div>
                         <div class="headerContent__Right">
                             <div class="headerInfo">
-                                <div class="headerIcon headerWishlist"><a href="favorite.html" class="icon iconWishlist" title="My Wishlist"><i class="iconHeader fas fa-heart"></i></a></div>
+                                <?php if(!isset($_SESSION['username'])){ ?>
+                                <div class="headerIcon headerWishlist"><a href="" class="icon iconWishlist" title="My Wishlist"><i class="iconHeader fas fa-heart"></i></a></div>
 
-                                <div class="far fa-grin-beam"><span><button><?php echo "Welcome ".$_SESSION['username']."!";  ?><button></span></div>            
+                                
+                                <div class="headerIcon headerLogin"><a href="./login.php" class="icon iconUser" title="Login"><i class="iconHeader fas fa-sign-out-alt"></i></a></div>  
+                                <div class="headerIcon headerRegister"><a href="./register.php" class="icon iconRegister" title="Register"><i class="iconHeader fas fa-user-plus"></i></a></div>
+                            <?php } else { ?>
+                                    <div class="form__welcome"><span class="welcome"><?php echo "Welcome ".$_SESSION['username']."!";  ?></span></div>
+                                    <div class="headerIcon headerLogin"><a href="./logout.php" class="icon iconUser" title="Logout"><i class="iconHeader fas fa-sign-out-alt"></i></a></div>
+                                    <div class="headerIcon headerRegister" id=mes  onclick="show()"><a href="" class="icon iconRegister" title="Edit Password"><i class="iconHeader fas fa-user-plus"></i></a></div>
                                 </div>  
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -322,7 +326,7 @@
     <script src="js/slick.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
-   <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/carousel.js"></script>      
 </body>
 </html>
@@ -358,3 +362,9 @@
         } 
     }
 ?>
+<script type="text/javascript">
+    function show(){
+        alert("Tính năng đang phát triển. Nếu muốn có thể liên hệ quản trị viên");
+    }
+
+</script>

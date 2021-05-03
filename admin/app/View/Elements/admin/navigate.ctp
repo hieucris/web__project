@@ -230,13 +230,13 @@
                     <!-- /input-group -->
                 </li>
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="/doctruyen/admin/Dashboards"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Users<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <?php echo $this->Html->link('list',array('controller'=>'Users','action'=>'list'),array('escape'=>false))?>
+                            <?php echo $this->Html->link('List',array('controller'=>'Users','action'=>'list'),array('escape'=>false))?>
                         </li>
                         <li>
                              <?php echo $this->Html->link('Add',array('controller'=>'users','action'=>'add'),array('escape'=>false))?>

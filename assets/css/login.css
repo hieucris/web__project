@@ -26,7 +26,7 @@
 		margin: 15px 0;
 	}
 	
-	button.form--btn {
+	button.form-submit {
 		border-radius: 20px;
 		border: 1px solid var(--yellow-color);
 		background-color: var(--yellow-color);
@@ -41,7 +41,7 @@
 		cursor: pointer;
 	}
 	
-	button.form--btn:active {
+	button.form-submit:active {
 		transform: scale(0.95);
 	}
 	
@@ -56,8 +56,13 @@
 		cursor: pointer;
 	}
 
+button:hover {
+    background: var(--yellow-color);
+    border-color: var(--yellow-color);
+}
+
 button.ghost:hover {
-    background-color: var(--yellow-color);
+    background-color: var yellow;
 }
 
 button#signUp {}
@@ -68,17 +73,22 @@ button#signUp {}
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
-		padding: 0 50px;
+		padding: 0 60px;
 		height: 100%;
 		text-align: center;
 	}
+
+span.form-message {
+    color: red;
+}
 	
-	input.input__text {
+	input.form-control {
 		background-color: #eee;
 		border: none;
 		padding: 12px 15px;
 		margin: 8px 0;
-		width: 100%;
+		width: 300px;
+		outline-color: var(--yellow-color);
 	}
 	
 	.container {
@@ -179,7 +189,7 @@ button#signUp {}
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
-		padding: 0 40px;
+		/* padding: 0 40px; */
 		text-align: center;
 		top: 0;
 		height: 100%;

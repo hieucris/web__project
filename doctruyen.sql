@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 02, 2021 lúc 03:18 PM
+-- Thời gian đã tạo: Th4 27, 2021 lúc 04:15 PM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 8.0.3
 
@@ -45,12 +45,12 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `parent_id`, `lft`, `rght`, `date_created`, `date_updated`, `description`) VALUES
-(2, 'Phiêu lưu', 0, 3, 4, '2017-04-05 09:01:52', '2017-04-18 03:30:52', 'Thể loại phiêu lưu, mạo hiểm, thường là hành trình của các nhân vật\r\n'),
-(3, 'Shounen', 0, 1, 2, '2017-04-18 02:58:17', '2017-04-18 03:29:15', 'Đối tượng hướng tới của thể loại này là phái nam. Nội dung của những bộ manga này thường liên quan đến đánh nhau và/hoặc bạo lực (ở mức bình thường, không thái quá)'),
-(4, 'Lãng Mạn', 0, 5, 6, '2017-04-18 03:31:10', '2017-04-18 03:31:10', 'Truyện lãng mạn'),
-(5, 'Siêu Nhiên', 0, 7, 8, '2017-04-18 03:31:30', '2017-04-18 03:31:30', 'Thể hiện những sức mạnh đáng kinh ngạc và không thể giải thích được, chúng thường đi kèm với những sự kiện trái ngược hoặc thách thức với những định luật vật lý'),
-(6, 'Hành động', 0, 9, 10, '2017-04-18 03:32:07', '2017-04-18 03:32:07', 'Thể loại này thường có nội dung về đánh nhau, bạo lực, hỗn loạn, với diễn biến nhanh\r\n'),
-(8, 'Phép thuật', 0, 11, 12, '2017-05-31 03:57:38', '2017-05-31 03:57:38', 'Thể loại thường xuất hiện những điều bí ấn không thể lí giải được và sau đó là những nỗ lực của nhân vật chính nhằm tìm ra câu trả lời thỏa đáng\r\n');
+(2, 'Adventure', 0, 3, 4, '2017-04-05 09:01:52', '2017-04-18 03:30:52', 'Thể loại phiêu lưu, mạo hiểm, thường là hành trình của các nhân vật\r\n'),
+(3, 'Anime', 0, 1, 2, '2017-04-18 02:58:17', '2017-04-18 03:29:15', 'Truyện tranh Nhật Bản'),
+(4, 'Romance', 0, 5, 6, '2017-04-18 03:31:10', '2017-04-18 03:31:10', 'Truyện lãng mạn'),
+(5, 'Comic', 0, 7, 8, '2017-04-18 03:31:30', '2017-04-18 03:31:30', 'Truyện tranh Châu Âu và Châu Mĩ'),
+(6, 'Action', 0, 9, 10, '2017-04-18 03:32:07', '2017-04-18 03:32:07', 'Thể loại này thường có nội dung về đánh nhau, bạo lực, hỗn loạn, với diễn biến nhanh\r\n'),
+(8, 'Magic', 0, 11, 12, '2017-05-31 03:57:38', '2017-05-31 03:57:38', 'Thể loại thường xuất hiện những điều bí ấn không thể lí giải được và sau đó là những nỗ lực của nhân vật chính nhằm tìm ra câu trả lời thỏa đáng\r\n');
 
 -- --------------------------------------------------------
 
@@ -306,6 +306,27 @@ INSERT INTO `chapters` (`id`, `name`, `story_id`, `link_img`, `created`, `status
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `roles`
+--
+
+CREATE TABLE `roles` (
+  `id` int(11) NOT NULL,
+  `name` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `roles`
+--
+
+INSERT INTO `roles` (`id`, `name`, `active`) VALUES
+(1, 'super admin', 1),
+(2, 'Giáo viên', 1),
+(3, 'Học viên', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `stories`
 --
 
@@ -338,7 +359,7 @@ INSERT INTO `stories` (`id`, `name`, `description`, `category_id`, `created`, `u
 (15, 'Bokura No Fushidara', 'Bokura No Fushidara', 5, '2017-05-31 03:16:45', '2021-04-04 12:57:37', 1, 1011, 'admin/app/webroot/img/stories/15.jpg', 'Đang cập nhật', 'Nhật Bản'),
 (17, 'The Beginning After The End', 'King Grey là người sở hữu tất cả trong một thế giới bị Võ thuật chi phối. Nhưng đi đôi với một sức mạnh to lớn lại là sự cô độc không hồi kết. Thế nên, mặc dù vẻ bên ngoài là một quốc vương mạnh mẽ, nhưng sâu trong thâm tâm lại là một kẻ yếu đuối không có ý chí. Nhưng sau đó lại được tái sinh trong một thế giới fantasy để làm lại một cuộc đời mới. Tuy nhuyên đâu dễ ăn đến thế ? Đằng sau sự hòa bình của thế giới này có vẻ tồn tại một mối đe dọa khủng khiếp nào đó. Với trọng trách lớn lao đó, lý do anh main nhà ta chuyển sinh đến đây là gì ?', 3, '2021-04-04 03:36:02', '2021-04-08 16:13:57', 1, 2123, 'admin/app/webroot/img/stories/17.jpg', 'Đang cập nhật', 'Hàn Quốc'),
 (18, 'Bách Luyện Thành Thần', 'Cảnh giới: Luyện nhục cảnh, Luyện cốt cảnh, Luyện tạng cảnh....\r\nLa Chính vì gái mà bị đày làm nô bộc. La Bái Nhiên tham vọng đầy mình :))\r\nLa Chính lại vì gái mà đâm đầu tu luyện :))\r\nLa Gia trong phủ nước sôi lửa bỏng, tranh giành kịch liệt... thôi thì đọc tiếp sẽ biết :)\r\n1 thanh niên dại gái tu luyện võ công =))', 2, '2021-04-05 05:15:16', '2021-04-27 03:14:52', 1, 1777, 'admin/app/webroot/img/stories/18.jpg', 'Đang cập nhật', 'Trung Quốc'),
-(20, 'Võ Đang Kỳ Hiệp', 'fdsfsdfds', 6, '2021-04-06 01:18:16', '2021-04-12 03:19:44', 1, 5687, 'admin/app/webroot/img/stories/20.jpg', 'Đang cập nhật', 'Hàn Quốc'),
+(20, 'Võ Đang Kỳ Hiệp', '', 6, '2021-04-06 01:18:16', '2021-04-12 03:19:44', 1, 5687, 'admin/app/webroot/img/stories/20.jpg', 'Đang cập nhật', 'Hàn Quốc'),
 (32, 'TÔI ĐÃ CHUYỂN SINH THÀNH SLIME', 'Một manga khác chuyển thể từ light novel đang hot ở nhật. Một anh chàng bị tên cướp đâm chết khi đang gặp vợ chưa cưới của đồng nghiệp. Khi đang thoi thóp trước khi chết, người đầy máu, anh ta nghe được một tiếng nói kỳ lạ. Giọng nói ấy chuyển thể sự tiếc nuối của anh chàng vì vẫn còn tân trước khi đi và ban cho anh ta chiêu thức đặc biệt [tiên nhân vĩ đại]. Liệu đây có phải là trò đùa?', 8, '2021-04-08 04:43:38', '2021-04-08 04:47:12', 1, 0, 'admin/app/webroot/img/stories/32.jpg', 'Fuse - KAWAKAMI Taiki', 'Nhật Bản'),
 (34, 'gosu cao thủ 2', 'Phần tiếp theo của Gosu Hành trình trả thù cho sư phụ vẫn tiếp tục liệu main có càng ngày càng hơn phần 1 không? các bạn đón xem nhé!', 6, '2021-04-12 03:56:25', '2021-04-22 10:42:21', 1, 0, 'admin/app/webroot/img/stories/34.jpg', 'Đang cập nhật', 'Hàn Quốc'),
 (37, 'Võ Sĩ Quyền Anh', 'Huấn luyện viên Boxing huyền thoại K đang tìm người kế thừa, ông đến phòng gym nơi Ryu đang tập và nhìn thấy được tiềm năng trở thành ngôi sao của Ryu. Những tưởng K sẽ nhận Ryu làm học trò ngay lập tức nhưng ông lại vô tình chạm mặt Yu khi cậu đang bị đánh hội đồng tại con hẻm sau phòng gym. Yu lúc đó chỉ biết ngồi yên chịu trận, gương mặt vô cảm nhưng K biết ngay là cậu bé này đang giấu nghề. Ông thuyết phục Yu về làm học trò của mình nhưng cậu bỏ đi vì không có hứng thú. Trong lúc đó, cậu bé Jay - người luôn bị Ryu bắt nạt - vì muốn bảo vệ Yu nên đang lấy hết can đảm để chống lại kẻ thù mạnh hơn mình gấp bội. Cuộc chiến thật sự sắp bắt đầu rồi, các bạn nhớ đón xem nha.', 6, '2021-04-13 10:20:57', '2021-04-13 10:29:07', 1, 0, 'admin/app/webroot/img/stories/37.jpg', 'Đang cập nhật', 'Hàn Quốc'),
@@ -355,26 +376,20 @@ INSERT INTO `stories` (`id`, `name`, `description`, `category_id`, `created`, `u
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `name` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `username` varchar(60) COLLATE utf8_unicode_ci DEFAULT NULL,
   `password` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date_created` datetime NOT NULL,
-  `date_updated` datetime NOT NULL,
-  `level` tinyint(4) NOT NULL DEFAULT 1
+  `date_updated` datetime NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `date_created`, `date_updated`, `level`) VALUES
-(2, 'admin', '$2a$10$RJX6k5GCxNuTzsD6FtBzQe8F.aQgMbX/QeKKM4G5nAGsTyyanCsTK', '2013-10-31 03:24:42', '2021-04-05 08:48:04', 0),
-(74, 'user1', 'user1', '2021-05-01 14:37:09', '2021-05-01 14:37:09', 1),
-(75, 'user2', 'user2', '2021-05-01 14:44:29', '2021-05-01 14:44:29', 1),
-(76, 'user3', 'user33', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1),
-(77, 'user4', 'user44', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1),
-(78, 'user5', 'user55', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1),
-(79, 'user6', 'user66', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1),
-(80, 'user7', 'user77', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1);
+INSERT INTO `users` (`id`, `name`, `username`, `password`, `date_created`, `date_updated`) VALUES
+(2, 'Tiến Đạt', 'admin', '$2a$10$RJX6k5GCxNuTzsD6FtBzQe8F.aQgMbX/QeKKM4G5nAGsTyyanCsTK', '2013-10-31 03:24:42', '2021-04-05 08:48:04'),
+(65, 'aabng', 'dsfdscxd', '$2a$10$MEEQeiTY8ebDoINH7w.Bb.xPac8MSce.HXSWSXXiONXrlOhmyUsaa', '2013-10-31 03:24:42', '2021-04-05 08:48:25');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -390,8 +405,13 @@ ALTER TABLE `categories`
 -- Chỉ mục cho bảng `chapters`
 --
 ALTER TABLE `chapters`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_story` (`story_id`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `stories`
@@ -422,6 +442,12 @@ ALTER TABLE `chapters`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
 
 --
+-- AUTO_INCREMENT cho bảng `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT cho bảng `stories`
 --
 ALTER TABLE `stories`
@@ -431,17 +457,7 @@ ALTER TABLE `stories`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
-
---
--- Các ràng buộc cho các bảng đã đổ
---
-
---
--- Các ràng buộc cho bảng `chapters`
---
-ALTER TABLE `chapters`
-  ADD CONSTRAINT `fk_story` FOREIGN KEY (`story_id`) REFERENCES `stories` (`id`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

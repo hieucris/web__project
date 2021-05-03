@@ -1,6 +1,8 @@
 .app{
     overflow-x: hidden;
-    background: url("../img/splash-bg.png") repeat-y;
+    background-image: url('https://zmp3-static.zadn.vn/skins/zmp3-v6.1/images/backgrounds/splash-bg.png'), linear-gradient(to bottom, #0a112b, #340d4e);
+    background-size: cover;
+    background-position: center;
 }
 /* start style header */
 
@@ -51,7 +53,6 @@ form.formSearch {
     position: relative;
     border-radius: 3px 3px 0 0;
     display: flex;
-    overflow: hidden;
 }
 
 input.search--control {
@@ -82,14 +83,14 @@ button.btnSearch:hover {
 
 button.btnSearch:after {
     position: absolute;
-    top: -20px;
-    left: -23px;
+    top: -15px;
+    left: -17px;
     content: "";
     width: 0px;
     height: 0px;
-    border: 18px solid transparent;
-    border-top: 70px solid var(--yellow-color);
-    transform: rotate(194deg);
+    border: 15px solid transparent;
+    border-top: 40px solid var(--yellow-color);
+    transform: rotate(181deg);
     cursor: pointer;
 }
 
@@ -115,33 +116,45 @@ i.fas.fa-search {
     top: 40px;
     left: 0px;
     width: 100%;
-    height: 500px;
+    height: auto;
+    max-height: 400px;
+    min-height: 0;
     background-color: var(--white-color);
     z-index: 9;
     overflow-y: scroll;
-    opacity: 0;
-    visibility: hidden;
 }
 .search__filter .list__storyBook--filter li {
     border-bottom: 1px solid var(--yellow-color);
-    height: 100px;
+    height: 90px;
     list-style: none;
 }
+
+li.emty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--yellow-color);
+    font-weight: bold;
+    }
+    
 .search__filter .list__storyBook--filter li a {
     display: flex;
     height: 100%;
     text-decoration: none;
 }
+
 .list__storyBook--filter li a img.storyBook--filter-img {
     display: block;
-    width: 15%;
-    height: 70%;
+    width: 18%;
+    height: 85%;
     margin: auto;
     border-radius: 5px;
 }
 .list__storyBook--filter li a .storyBook--filter-right {
     width: 80%;
-    padding: 20px 0 20px 20px;
+    margin: auto;
+    padding-left: 30px;
 }
 .storyBook--filter-right .storyBook--filter-name {
     font-size: 2.2rem;
@@ -154,10 +167,6 @@ i.fas.fa-search {
     margin-top: 8px;
 }
 .storyBook--filter-right .storyBook--filter-chapter {
-    font-size: 1.2rem;
-    margin-top: 4px;
-    color: var(--yellow-color);
-    font-style: italic;
 }
 .headerContent__Right{
     flex: 2;
@@ -172,6 +181,17 @@ i.fas.fa-search {
     padding-left: 130px;
     overflow: hidden;
     width: 100%;
+}
+
+.form__welcome {
+    line-height: 70px;
+    margin-left: -63px;
+    margin-right: 35px;
+}
+
+span.welcome {
+    color: var(--yellow-color);
+    font-size: 2rem;
 }
 
 .headerIcon {

@@ -34,14 +34,8 @@
                                             <label>Nhập lại mật khẩu</label>
                                             <?php echo $this->Form->input('confirm_password', array('type'=>'password', 'class'=>'form-control')); ?>
                                         </div>
-                                        <div class="form-group">
-                                            <label>Họ và tên</label>
-                                           <?php echo $this->Form->input('name', array('class'=>'form-control', )); ?>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Email:</label><br />
-                                            <?php echo $this->Form->input('email', array('class'=>'form-control')); ?>
-                                        </div>
+                                        
+                                        
                                         <button id="linkUpdate" type="submit" class="btn btn-success">Save</button>
                                         <button type="button" onclick="window.location.href='/admin/users/list'" class="btn btn-info">Danh sách</button>
                                     <?php echo $this->Form->end();?>

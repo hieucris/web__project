@@ -78,9 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
                 header("Location: successful_reg.php");
-            } else{
-                echo "Something went wrong. Please try again later.";
-            }
+            } 
 
             // Close statement
             mysqli_stmt_close($stmt);
@@ -143,24 +141,53 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
 
         <div class="header__nav">
-                <div class="grid">
-                    <ul class="navbar__list">
-                        <?php
-                            $sql = "SELECT * FROM categories";
-                            $result = $conn ->query($sql);
-                            while($row = $result->fetch_array()) {
-                        ?>
-                        <li class="navbar__item">
-                            <a href="the-loai.php?id=<?php echo $row['id']; ?>">
-                                <div class="menuURL">
-                                    <i class=""></i><span><?php echo $row["name"] ?></span>
-                                </div>
-                            </a>
-                        </li>
-                        <?php } ?>
-                    </ul>
-                </div>
+            <div class="grid">
+                <ul class="navbar__list">
+                    <li class="navbar__item">
+                        <a href="the-loai.php?id=2">
+                            <div class="menuURL">
+                                <i class="fas fa-rocket"></i><span>Phiêu Lưu</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="the-loai.php?id=3">
+                            <div class="menuURL">
+                                <i class=""></i><span>Shounen</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="the-loai.php?id=4">
+                            <div class="menuURL">
+                                <i class=""></i><span>Lãng Mạn</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="the-loai.php?id=5">
+                            <div class="menuURL">
+                                <i class=""></i><span>Siêu Nhiên</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="the-loai.php?id=6">
+                            <div class="menuURL">
+                                <i class=""></i><span>Hành động</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="the-loai.php?id=8">
+                            <div class="menuURL">
+                                <i class=""></i><span>Phép thuật</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
+        </div>
        
     </div>
     <div class="form">
@@ -180,11 +207,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <input id="username" class="form-control" name="username" type="text" placeholder="Nhập Username">
                             <span class="form-message"><?php echo $username_err; ?></span>
                         </div>
-                        <div class="form-group" <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                        <div class="form-group" <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>>
                             <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
                             <span class="form-message"><?php echo $password_err; ?></span>
                         </div>
-                        <div class="form-group" <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+                        <div class="form-group" <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>>
                             <input id="confirm_password" name="confirm_password" placeholder="Nhập lại mật khẩu" type="password" class="form-control">
                             <span class="form-message"><?php echo $confirm_password_err; ?></span>
                           </div>
@@ -319,11 +346,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
-    <script src="./js/slick.min.js"></script>
-    <script src="./js/wow.min.js"></script>
-    <script src="./js/login_register.js"></script>
-    <script src="./js/isotope.pkgd.min.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/carousel.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/login_register.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
 </body>
 </html>

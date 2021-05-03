@@ -28,12 +28,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $sql = "SELECT id from users where username='".$username."' and password= '$password' ";
         $result = mysqli_query($conn,$sql);
         $row = mysqli_fetch_array($result);
-            echo $row['username'];
         $count = $row['id'];
-        echo $count;
         if($count > 0){
             $_SESSION['username'] = $username;    
-        }   
+        }
         
     }
     

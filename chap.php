@@ -3,6 +3,7 @@
     $story_id=$_GET['story_id'];
     $ordering=$id;
     $test=$id;
+    include('check.php');
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/book.css">
+    <link rel="stylesheet" href="assets/css/book.css">
     <link rel="stylesheet" href="./assets/css/login.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/base.css">
@@ -42,7 +43,7 @@
                         <div class="headerContent__center">
                             <div class="headerContent__bottom">
                                 <div class="headerSearch">
-                                    <form action="search.php" class="formSearch" method="POST">
+                                    <form action="backend/search.php" class="formSearch" method="POST">
                                         <input type="text" class="search--control" placeholder="I am looking for..." id="comic" name=comic>
                                         <button type="submit" class="btnSearch" name="submit">
                                             <span class="btnSearch-text">Search</span>
@@ -55,10 +56,18 @@
                         </div>
                         <div class="headerContent__Right">
                             <div class="headerInfo">
+                                <?php if(!isset($_SESSION['username'])){ ?>
                                 <div class="headerIcon headerWishlist"><a href="" class="icon iconWishlist" title="My Wishlist"><i class="iconHeader fas fa-heart"></i></a></div>
-                                <div class="headerIcon headerLogin"><a href="./form.html" class="icon iconUser" title="Login"><i class="iconHeader fas fa-sign-out-alt"></i></a></div>
-                                <div class="headerIcon headerRegister"><a href="./form.html" class="icon iconRegister" title="Register"><i class="iconHeader fas fa-user-plus"></i></a></div>
-                            </div>  
+
+                                
+                                <div class="headerIcon headerLogin"><a href="./login.php" class="icon iconUser" title="Login"><i class="iconHeader fas fa-sign-out-alt"></i></a></div>  
+                                <div class="headerIcon headerRegister"><a href="./register.php" class="icon iconRegister" title="Register"><i class="iconHeader fas fa-user-plus"></i></a></div>
+                            <?php } else { ?>
+                                    <div class="form__welcome"><span class="welcome"><?php echo "Welcome ".$_SESSION['username']."!";  ?></span></div>
+                                    <div class="headerIcon headerLogin"><a href="./logout.php" class="icon iconUser" title="Logout"><i class="iconHeader fas fa-sign-out-alt"></i></a></div>
+                                    <div class="headerIcon headerRegister" id=mes  onclick="show()"><a href="" class="icon iconRegister" title="Edit Password"><i class="iconHeader fas fa-user-plus"></i></a></div>
+                                </div>  
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -264,7 +273,7 @@
                 </div>
             </div>
         </footer>
-
+        
         <a class="on__top" href="#top"><i class="icon__ontop fa fa-angle-up"></i></a>
     </div>
     
@@ -286,4 +295,14 @@ function handleSelect(elm)
 {
 window.location = elm.value;
 }
+$(window).bind('scroll', function() {
+    var navChap = $( window ).height()-500;
+      if ($(window).scrollTop() > navChap) {
+        $('.breadcrumb-area').addClass('fixed');
+      }
+      else {
+        $('.breadcrumb-area').removeClass('fixed');
+      }
+  });
 </script>
+

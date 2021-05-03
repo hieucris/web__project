@@ -27,14 +27,11 @@
                                             <?php echo $this->Form->input('username', array('class'=>'form-control')); ?>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <?php echo $this->Form->input('email', array('class'=>'form-control')); ?>
-                                        </div>
+                                       
 
                                         <div class="form-group">
-                                            <label>Full name</label>
-                                            <?php echo $this->Form->input('name', array('class'=>'form-control')); ?>
+                                            <label>Phân Quyền</label>
+                                            <?php echo $this->Form->input('level', array('class'=>'form-control')); ?>
                                         </div>
                                         <div class="form-group">
                                             <label>Pass</label>

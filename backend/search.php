@@ -20,13 +20,12 @@
   				$output .= "			<div class='storyBook--filter-right'>";
 				$output .= "			<div class='storyBook--filter-name'>".$row["0"]."</div>";
 				$output .= "			<p class='storyBook--filter-content'>".$row["1"]."</p>";
-				$output .= '			<p class="storyBook--filter-chapter"></p>'; 
 				$output .= "		</div>";
 				$output .= "	</a>";
 				$output .= "</li>";
   			}
   		}else{
-  			  $output .= '<li> Comic not Found</li>';
+  			  $output .= '<li class="emty">Không tìm thấy truyện</li>';
   		}
   		
 	  	$output .= '</ul>';

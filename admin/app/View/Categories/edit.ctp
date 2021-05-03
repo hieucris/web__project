@@ -22,19 +22,15 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <?php echo $this->Form->create(array('id'=>'appForm', 'inputDefaults'=>array('label'=>false, 'div'=>false))); ?>
-                                        <div class="form-group">
-                                            <label>Username</label>
-                                            <?php echo $this->Form->input('username', array('class'=>'form-control')); ?>
-                                        </div>
+                                       
 
                                         <div class="form-group">
-                                            <label>Email</label>
-                                            <?php echo $this->Form->input('email', array('class'=>'form-control')); ?>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Full name</label>
+                                            <label>Name</label>
                                             <?php echo $this->Form->input('name', array('class'=>'form-control')); ?>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <?php echo $this->Form->input('description', array('class'=>'form-control')); ?>
                                         </div>
 
                                         <button type="submit" class="btn btn-default">Save</button>

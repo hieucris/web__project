@@ -1,7 +1,6 @@
 <?php
 // Include config file
 require_once "config.php";
-$_SESSION['username']= 'Guest';
 session_start();
 
 // Define variables and initialize with empty values
@@ -35,7 +34,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $_SESSION['username'] = $username;
            header('Location: index.php');
         }else{
-            header('Location: index.php');
+            echo "Sai username hoặc mật khẩu";
+            header('Location: login.php');
        
 		}     
         
@@ -56,7 +56,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="./assets/css/slick.css">
     <link rel="stylesheet" href="./assets/css/animate.css">
     <link rel="stylesheet" href="./assets/css/carousel.css">
-    <link rel="stylesheet" href="./assets/css/loading.css">
+    <link rel="stylesheet" href="/assets/css/loading.css">
     <link rel="stylesheet" href="./assets/css/grid.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap&subset=vietnamese" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton&display=swap&subset=vietnamese" rel="stylesheet">
@@ -94,48 +94,48 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
         </div>
 
-        <div class="header__nav">
+         <div class="header__nav">
             <div class="grid">
                 <ul class="navbar__list">
                     <li class="navbar__item">
-                        <a href="trinhtham.html">
+                        <a href="the-loai.php?id=2">
                             <div class="menuURL">
-                                <i class="fas fa-rocket"></i><span>Trinh Thám</span>
+                                <i class="fas fa-rocket"></i><span>Phiêu Lưu</span>
                             </div>
                         </a>
                     </li>
                     <li class="navbar__item">
-                        <a href="ngontinh.html">
+                        <a href="the-loai.php?id=3">
                             <div class="menuURL">
-                                <i class="fas fa-grin-hearts"></i><span>Ngôn Tình</span>
+                                <i class=""></i><span>Shounen</span>
                             </div>
                         </a>
                     </li>
                     <li class="navbar__item">
-                        <a href="lichsu.html">
+                        <a href="the-loai.php?id=4">
                             <div class="menuURL">
-                                <i class="fas fa-book"></i><span>Lịch Sử</span>
+                                <i class=""></i><span>Lãng Mạn</span>
                             </div>
                         </a>
                     </li>
                     <li class="navbar__item">
-                        <a href="vanhoc.html">
+                        <a href="the-loai.php?id=5">
                             <div class="menuURL">
-                                <i class="fas fa-book-open"></i><span>Văn Học</span>
+                                <i class=""></i><span>Siêu Nhiên</span>
                             </div>
                         </a>
                     </li>
                     <li class="navbar__item">
-                        <a href="thieunhi.html">
+                        <a href="the-loai.php?id=6">
                             <div class="menuURL">
-                                <i class="fas fa-child"></i><span>Thiếu Nhi</span>
+                                <i class=""></i><span>Hành động</span>
                             </div>
                         </a>
                     </li>
                     <li class="navbar__item">
-                        <a href="haihuoc.html">
+                        <a href="the-loai.php?id=8">
                             <div class="menuURL">
-                                <i class="far fa-grin-beam"></i><span>Hài Hước</span>
+                                <i class=""></i><span>Phép thuật</span>
                             </div>
                         </a>
                     </li>
@@ -271,12 +271,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
-    <script src="./js/slick.min.js"></script>
-    <script src="./js/wow.min.js"></script>
-    <script src="./js/login_register.js"></script>
-    <script src="./js/isotope.pkgd.min.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/carousel.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/login_register.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
 
     <a class="on__top" href="#top"><i class="icon__ontop fa fa-angle-up"></i></a>
     </div>

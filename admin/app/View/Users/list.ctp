@@ -45,9 +45,7 @@ $(document).ready(function() {
                                 <thead>
                                     <tr>
                                         <th>ID User</th>
-                                        <th>Name</th>
                                         <th>Username</th>
-                                        <th>Email</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -56,9 +54,7 @@ $(document).ready(function() {
                                     ?>
                                     <tr>
                                         <td><?php echo $val['User']['id']?></td>
-                                        <td><?php echo $val['User']['name']?></td>
                                         <td><?php echo $val['User']['username']?></td>
-                                        <td><?php echo $val['User']['email']?></td>
                                         <td>
                                             <?php echo $this->Html->link('Edit',array('controller'=>'users','action'=>'edit',$val['User']['id']), array('class' => 'btn btn-warning'));
                                             ?>
